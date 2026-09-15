@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercicio 2 - Genero Musical</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 40px;
+      color: #333;
+    }
+    .container {
+      background: #fff;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 25px 30px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+    h2 {
+      color: #444;
+    }
+    #resultado {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #2f855a;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Qual seu gênero musical preferido?</h2>
+    <p>Opções:</p>
+    <p>
+      1 - Rock<br>
+      2 - Pop<br>
+      3 - Hip Hop<br>
+      4 - Eletrônica<br>
+      5 - Jazz<br>
+      6 - Clássica
+    </p>
+
+    <p id="resultado"></p>
+  </div>
+
+  <script>
+    // pede pro usuario o genero musical favorito
+    var opcao = prompt("Digite o numero do seu genero musical preferido (1 a 6):");
+    opcao = parseInt(opcao);
+
+    var generoEscolhido = "";
+
+    switch (opcao) {
+      case 1:
+        generoEscolhido = "Rock";
+        break;
+      case 2:
+        generoEscolhido = "Pop";
+        break;
+      case 3:
+        generoEscolhido = "Hip Hop";
+        break;
+      case 4:
+        generoEscolhido = "Eletrônica";
+        break;
+      case 5:
+        generoEscolhido = "Jazz";
+        break;
+      case 6:
+        generoEscolhido = "Clássica";
+        break;
+      default:
+        generoEscolhido = "invalido";
+    }
+
+    var resultado = document.getElementById("resultado");
+
+    if (generoEscolhido == "invalido") {
+      resultado.innerHTML = "Opção inválida! Escolha um número de 1 até 6.";
+    } else {
+      resultado.innerHTML = "Seu gênero musical preferido é: " + generoEscolhido;
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercicio 1 - Filme Favorito</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 40px;
+      color: #333;
+    }
+    .container {
+      background: #fff;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 25px 30px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+    h2 {
+      color: #444;
+    }
+    #resultado {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #2b6cb0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Qual seu estilo de filme favorito?</h2>
+    <p>Opções:</p>
+    <p>
+      1 - Ação<br>
+      2 - Comédia<br>
+      3 - Drama<br>
+      4 - Terror<br>
+      5 - Ficção Científica<br>
+      6 - Romance
+    </p>
+
+    <p id="resultado"></p>
+  </div>
+
+  <script>
+    // pede pro usuario digitar o numero do estilo de filme
+    var opcao = prompt("Digite o numero do seu estilo de filme favorito (1 a 6):");
+    opcao = parseInt(opcao); // transforma em numero pra funcionar no switch
+
+    var estiloEscolhido = "";
+
+    switch (opcao) {
+      case 1:
+        estiloEscolhido = "Ação";
+        break;
+      case 2:
+        estiloEscolhido = "Comédia";
+        break;
+      case 3:
+        estiloEscolhido = "Drama";
+        break;
+      case 4:
+        estiloEscolhido = "Terror";
+        break;
+      case 5:
+        estiloEscolhido = "Ficção Científica";
+        break;
+      case 6:
+        estiloEscolhido = "Romance";
+        break;
+      default:
+        estiloEscolhido = "invalido";
+    }
+
+    // mostra o resultado na tela
+    var resultado = document.getElementById("resultado");
+
+    if (estiloEscolhido == "invalido") {
+      resultado.innerHTML = "Opção inválida! Escolha um número de 1 até 6.";
+    } else {
+      resultado.innerHTML = "Seu estilo de filme favorito é: " + estiloEscolhido;
+    }
+  </script>
+
+</body>
+</html>

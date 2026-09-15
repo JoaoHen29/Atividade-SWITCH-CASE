@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercicio 3 - Meu Tema</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 40px;
+      color: #333;
+    }
+    .container {
+      background: #fff;
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 25px 30px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+    h2 {
+      color: #444;
+    }
+    #resultado {
+      margin-top: 20px;
+      font-size: 17px;
+      font-weight: bold;
+      color: #975a16;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Meu tema escolhido: Tecnologia</h2>
+    <p>Qual área da tecnologia te interessa mais?</p>
+    <p>
+      1 - Desenvolvimento Web<br>
+      2 - Segurança da Informação<br>
+      3 - Inteligência Artificial<br>
+      4 - Redes de Computadores<br>
+      5 - Banco de Dados<br>
+      6 - Desenvolvimento Mobile
+    </p>
+
+    <p id="resultado"></p>
+  </div>
+
+  <script>
+    // esse exercicio o tema fui eu que escolhi (tecnologia)
+    var opcao = prompt("Digite o numero da area de tecnologia que voce mais gosta (1 a 6):");
+    opcao = parseInt(opcao);
+
+    var mensagem = "";
+
+    switch (opcao) {
+      case 1:
+        mensagem = "Desenvolvimento Web. Continue treinando HTML, CSS e JavaScript!";
+        break;
+      case 2:
+        mensagem = "Segurança da Informação. Vale a pena estudar sobre proteção de dados e boas praticas de seguranca.";
+        break;
+      case 3:
+        mensagem = "Inteligência Artificial. Uma area que ta crescendo muito, vale estudar Python e machine learning.";
+        break;
+      case 4:
+        mensagem = "Redes de Computadores. Da pra aprender bastante estudando como a internet funciona por tras dos panos.";
+        break;
+      case 5:
+        mensagem = "Banco de Dados. Pratique SQL, é uma habilidade que praticamente toda empresa de tecnologia usa.";
+        break;
+      case 6:
+        mensagem = "Desenvolvimento Mobile. Vale a pena testar Kotlin, Swift ou até o Flutter pra criar apps.";
+        break;
+      default:
+        mensagem = "invalido";
+    }
+
+    var resultado = document.getElementById("resultado");
+
+    if (mensagem == "invalido") {
+      resultado.innerHTML = "Opção inválida! Escolha um número de 1 até 6.";
+    } else {
+      resultado.innerHTML = "Você escolheu: " + mensagem + "<br><br>Continue estudando e praticando essa área, com o tempo você vai pegando mais confiança!";
+    }
+  </script>
+
+</body>
+</html>

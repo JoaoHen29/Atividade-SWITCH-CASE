@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercicio 4 - Forma de Pagamento</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 40px;
+      color: #333;
+    }
+    .container {
+      background: #fff;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 25px 30px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+    h2 {
+      color: #444;
+    }
+    #resultado {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #b83280;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Calculadora de pagamento</h2>
+    <p>Formas de pagamento:</p>
+    <p>
+      1 - Dinheiro/PIX (10% de desconto)<br>
+      2 - Débito (5% de desconto)<br>
+      3 - Crédito (sem desconto)
+    </p>
+
+    <p id="resultado"></p>
+  </div>
+
+  <script>
+    // pede o valor da compra
+    var valor = prompt("Qual o valor total da compra?");
+    valor = parseFloat(valor);
+
+    var resultado = document.getElementById("resultado");
+
+    // confere se o valor digitado faz sentido
+    if (isNaN(valor) || valor <= 0) {
+      resultado.innerHTML = "Valor inválido, digite um numero maior que zero.";
+    } else {
+
+      var forma = prompt("Escolha a forma de pagamento:\n1 - Dinheiro/PIX\n2 - Débito\n3 - Crédito");
+      forma = parseInt(forma);
+
+      var desconto;
+      var nome;
+
+      switch (forma) {
+        case 1:
+          desconto = 0.10;
+          nome = "Dinheiro/PIX";
+          break;
+        case 2:
+          desconto = 0.05;
+          nome = "Débito";
+          break;
+        case 3:
+          desconto = 0;
+          nome = "Crédito";
+          break;
+        default:
+          desconto = -1; // uso -1 pra identificar que deu invalido
+      }
+
+      if (desconto == -1) {
+        resultado.innerHTML = "Forma de pagamento inválida! Escolha 1, 2 ou 3.";
+      } else {
+        var valorFinal = valor - (valor * desconto);
+
+        resultado.innerHTML =
+          "Forma de pagamento: " + nome + "<br>" +
+          "Valor da compra: R$ " + valor.toFixed(2) + "<br>" +
+          "Valor final com desconto: R$ " + valorFinal.toFixed(2);
+      }
+    }
+  </script>
+
+</body>
+</html>
